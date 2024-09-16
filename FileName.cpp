@@ -28,8 +28,30 @@ int main()
 			insert_coin += coin;
 			scanf_s("%d", &coin);
 		}
-		else if(scanf_s("%s", s) && strcmp(s, "back") == 0)
+		else if (scanf_s("%s", s) && strcmp(s, "back") == 0)
 			insert_coin -= coin;
-		}
-	return 0;
+	}
+
+	int change = insert_coin - total_price;
+	if (change > 0) {
+		printf("’“ƒ˙%d‘™", change);
+	}
+	else {
+		printf("Œﬁ–Ë’“¡„");
+	}
+}
+
+char name[10];
+char n;
+int price, quantity, channel, single_price, total_price = 0;
+while (scanf("%s", name), strcmp(name, "END") != 0) {
+
+	if (strcmp(name, "back") == 0) quantity = -quantity;
+	else {
+		printf("please succeed");
+		n = name[0];
+		scanf("%d %d", &channel, &quantity);
+	}
+	single_price = price[channl - 1];
+	total_price += single_price;
 }
