@@ -19,39 +19,41 @@ int main()
 	int total_price = price[channl - 1] * number;
 	quantity[channl - 1] -= number;
 
-	int insert_coin = 0;
-	int coin = 0;
-	char s[4];
+	char end[4] = { 'e','n','d',0 };
+	char back[5] = { 'b','a','c','k',0 };
+	char select[10];
+	int total = 0;
+	int num = 0;
+	int amount;
 
-	while (insert_coin < total_price) {
-		if (scanf_s("%d", &coin) == 1) {
-			insert_coin += coin;
-			scanf_s("%d", &coin);
+begin:
+
+	while (strcmp(select, end) != 0) {
+		printf("please choose the product");
+		scanf_s("%s", select);
+		if (strcmp(select, back) == 0 && num <= 2) {
+			quantity[channl - 1] += amount;
+			total -= price[channl - 1];
+			num++;
+			printf("please succeed");
 		}
-		else if (scanf_s("%s", s) && strcmp(s, "back") == 0)
-			insert_coin -= coin;
+		else if (num > 2 && strcmp(back, select) = {
+		   printf("sorry,the num of returns are exceeded");
+			}
+		else if (strcmp(end, select) == 0{
+			break}
+		else {
+			printf("please select the commodity\n");
+			scanf_s("%d %d", channl, amount);
+			if quantity[channl - 1] > amount{
+			printf("please continue");
+			quantity[channl - 1] -= amount
+				total += amount * price[channl - 1];
+				scanf_s("%d %d", name[channl - 1], amount);
+			}
+			else {
+				printf("the commodity is insufficient");
+			}
+		}
 	}
 
-	int change = insert_coin - total_price;
-	if (change > 0) {
-		printf("’“ƒ˙%d‘™", change);
-	}
-	else {
-		printf("Œﬁ–Ë’“¡„");
-	}
-}
-
-char name[10];
-char n;
-int price, quantity, channel, single_price, total_price = 0;
-while (scanf("%s", name), strcmp(name, "END") != 0) {
-
-	if (strcmp(name, "back") == 0) quantity = -quantity;
-	else {
-		printf("please succeed");
-		n = name[0];
-		scanf("%d %d", &channel, &quantity);
-	}
-	single_price = price[channl - 1];
-	total_price += single_price;
-}
